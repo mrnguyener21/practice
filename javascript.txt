@@ -1,2 +1,3 @@
-What is the map function?
-    - Javascript function is similar to the forEach function where it will cycle through an array, however it will give a return unlike for each
+What is the difference between the map and the foreach function?
+    -forEach can execute a function for each components of an array, while map can take the array and use it's components to create an entirely new array.
+    -Foreach is good for mutating or changing the array which is why it doesn't return anything, while map is good for creating a whole new array based off the array it is being used it meaning maps will always have a return
