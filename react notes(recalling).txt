@@ -8,6 +8,8 @@ Do we want to download the entire node module?
 What is the role of package.json in React?
     -The role of package.json is to communicate which node modules we need for our react application so that we do not end up downloading the entire node module database. This is done by listing what "dependencies" are needed within the package.json file
 
+What is the public folder?
+-contains the html of the react application(separate from the html written in jsx in the component files)
 
 What is the src file?
     -The src file is folder is what contains all of the different parts of a react application. This includes the index.js file, the App.js file and then the component files.
@@ -43,11 +45,14 @@ How do you use javascript within and html tag and what is the point?
 What is an API?
     -An API is the door we use to access different buckets of code. An example would be when we use eventlisteners with javascript. It always starts off with document.addEventListner, and the document is an API that we are using the access the code within it.
 
+What does API stand for?
+    -Application programming interface
+
 What is a function component?
     - A function component is just a function that is used within a component file and is then exported into the App.js file.
 
-What is a class component?
-    A class component, from my understanding, is the older way of writing functions within a component file (pre-ES6)
+What is a class based component?
+    A class  based component, from my understanding, is the older way of writing functions within a component file (pre-ES6)
 
 What are the two kinds of exports and how do they differ?
     -Default export 
@@ -60,13 +65,13 @@ What are the two kinds of exports and how do they differ?
             export default person
         -With the following example, all App.js has to do is import person from "the component file name" and it will have access to the funtion component person1
 
-    -name export?(NEED TO STUDY UP)
+    -Exporting named values(NEED TO STUDY UP) 
+        -will export only the parameter called upon unlike default export where it will export everything before it
 
 
 
 What is the public folder?
--i forgot, gotta go read up and recall tomorrow
-What does API stand for?
+    -contains the html of the react application(separate from the html written in jsx in the component files)
 
 
 
