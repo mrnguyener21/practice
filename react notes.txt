@@ -72,8 +72,13 @@
 
     What is the public folder?
         -contains the html of the react application(separate from the html written in jsx in the component files)
-
+---What is Babel and why is it important for react?
+    -a free ad opensource javascript transcompiler
+    - It's important because the prefered syntax for React is JSX and babel can take that and turn it into a readable javascript
 ----MAIN CONCEPTS  ---
+    Introducing JSX 
+        How does JSX prevent injection attacks
+            - because it reads texts as texts, so HTML in user input is treated as text not HTML. This means the code can't be change externally 
     Rendering Elements
         Rendinger an Element into the DOM
             What is a "root" DOM node?
