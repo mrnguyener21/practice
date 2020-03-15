@@ -1,0 +1,72 @@
+---WHAT I RECALLED OFF THE TOP OF MY HEAD---
+What is a node module?
+    - a node module is a collection of different sets of data that we can use as a base for creating something. For example, if you want to create a sliding gallery there will most likely be a node muodule
+
+Do we want to download the entire node module?
+    -With node muodules we only want to grab the ones that we need so that it is not only easier to navigate but if we were to push the file to github for example, there is not a this giant folder of millions of folders. To do this, we move on to package.json
+
+What is the role of package.json in React?
+    -The role of package.json is to communicate which node modules we need for our react application so that we do not end up downloading the entire node module database. This is done by listing what "dependencies" are needed within the package.json file
+
+
+What is the src file?
+    -The src file is folder is what contains all of the different parts of a react application. This includes the index.js file, the App.js file and then the component files.
+
+What is the index.js file?
+    -the index.js file is the brain of the react application. It is the starting file to create the react application. It does so by importing React from 'react' and importing Reactdom from "reactdom" to grab the necessary node module to have the react application work. It also import from our App.js file.    
+
+What is the App.js file?
+    -The App.js file is the "master" component files that connects to the index.js that imports the data from the other component files which then the index.js files get access to since it imports from the App.js file. I guess this can be seen as the nervous system of the react application, connecting the body and limb to the brain so that information can be connected and sent to the proper part and to execute commands correctly.
+
+
+What are components?
+    -components are the limbs of a react application. They are different files that each contains code for one specific part of the application. For example if there is a feature for a pop up chat like with facebook, there will probably be a component for it.
+
+What is the point of a component versus just writing all the code in one file?
+    -Having different components versus having one giant file will make it easier to not only navigate, but to also edit the code for that specific component of the application with minimal risk of affecting other parts of the application.
+
+How do we connect components?
+    -We connect components by using the import and export function and having it imported into App.js
+
+How do we label component files?
+    -We label them with a capital letter in the beginner. Examples would be App.js(the A is capital) or User.js(the U is capital);
+
+What language do we use in React?
+    -JSX
+
+What is the JSX?
+    -JSX is the combination of javascript and html so that it can be used together in the same file
+
+How do you use javascript within and html tag and what is the point?
+    -<div>{'insert javascript here'</div>
+    The point is to make the html dynamic, similar to the reason we use a template string    
+What is an API?
+    -An API is the door we use to access different buckets of code. An example would be when we use eventlisteners with javascript. It always starts off with document.addEventListner, and the document is an API that we are using the access the code within it.
+
+What is a function component?
+    - A function component is just a function that is used within a component file and is then exported into the App.js file.
+
+What is a class component?
+    A class component, from my understanding, is the older way of writing functions within a component file (pre-ES6)
+
+What are the two kinds of exports and how do they differ?
+    -Default export 
+        -Default export will export the entire block of chain that is contained within it  
+        -ex:
+            const person1 = () => {
+                firstName: 'victor',
+                lastName: 'nguyen";
+            }
+            export default person
+        -With the following example, all App.js has to do is import person from "the component file name" and it will have access to the funtion component person1
+
+    -name export?(NEED TO STUDY UP)
+
+
+
+What is the public folder?
+-i forgot, gotta go read up and recall tomorrow
+What does API stand for?
+
+
+
