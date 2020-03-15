@@ -1,4 +1,4 @@
----WHAT I RECALLED OFF THE TOP OF MY HEAD---
+---WHAT I RECALLED OFF THE TOP OF MY HEAD FROM LESSON ON 03/14/20---
 What is a node module?
     - a node module is a collection of different sets of data that we can use as a base for creating something. For example, if you want to create a sliding gallery there will most likely be a node muodule
 

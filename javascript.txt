@@ -1,0 +1,2 @@
+What is the map function?
+    - Javascript function is similar to the forEach function where it will cycle through an array, however it will give a return unlike for each
