@@ -92,3 +92,16 @@
             What does react update and how?( need better explanation)
                 -React only updates what is necessary
                 -ReactDOM compares the element and its children to the previous one and only applies the DOM updates necessary to bring the DOM to the desired state(this means it compares and spits out the difference aka "Updating what is necessary") this way the entire UI does not get refreshed, only what is changing
+
+---WHAT ARE PROPS---
+    -Props is what is used to send data from the parent component to the child component and is used similar to html tags.
+    -Similar to how we export and import to different component files, props allows us to speciy the data that we want to transfer over
+    -The data that props send to their child component cannot change unless it is changed within the parent component. 
+    -Props is simply a vehicle with the data as it's passenger leaving it's home(the parent) to a new city(the child)
+    -For example 
+        PARENT COMPONENT 
+            const parent () => <div><h1 category='test'></h1></div>
+
+        CHILD COMPONENT 
+             const child () => <div><h1>hi this is a {props.category}</h1></div>
+    here we are passing the props named "category" containing data which is a string called 'test' into the child component. 
