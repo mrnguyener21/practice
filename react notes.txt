@@ -93,15 +93,76 @@
                 -React only updates what is necessary
                 -ReactDOM compares the element and its children to the previous one and only applies the DOM updates necessary to bring the DOM to the desired state(this means it compares and spits out the difference aka "Updating what is necessary") this way the entire UI does not get refreshed, only what is changing
 
----WHAT ARE PROPS---
+---WHAT ARE PROPS--- 
     -Props is what is used to send data from the parent component to the child component and is used similar to html tags.
     -Similar to how we export and import to different component files, props allows us to speciy the data that we want to transfer over
     -The data that props send to their child component cannot change unless it is changed within the parent component. 
     -Props is simply a vehicle with the data as it's passenger leaving it's home(the parent) to a new city(the child)
     -For example 
         PARENT COMPONENT 
-            const parent () => <div><h1 category='test'></h1></div>
+            const parent () => <div><child category='test'/></div>
 
         CHILD COMPONENT 
              const child () => <div><h1>hi this is a {props.category}</h1></div>
     here we are passing the props named "category" containing data which is a string called 'test' into the child component. 
+
+---WHAT ARE STATES---
+    -States are objects used within a class component where the data contained in the state is dynamic (it changes)
+---WHATS THE DIFFERENCE BETWEEN PROPS AND STATES---
+    PROPS:
+    -used in functional components
+    -send data contained within the  parent component to the child component
+    -data that is sent cannot be changed by the child component
+    -EX:below the child component is gaining access to the data from the parent component. specifically the data within the props labeled name
+        PARENT COMPONENT
+            const parent () => {
+                const bob = 'bob';
+                return(
+                <div>
+                    <parentData name=bob/>
+                </div>
+                )
+            }
+            export default parent;
+        CHILD COMPONENT
+        const child () => {
+            return(
+                <div>
+                    <h1>Hello, my name is {props.name}</h1>
+                </div>
+            );
+        };
+        export default child;
+    STATES:
+    -used in class components
+    -deals with the data within the class component itself rather than fetching data externally from a parent function
+    -used for data that can change within the UI
+    EX: Here we returning a class component where whenever the button gets clicked the counter within the state object increases by 1
+        class App extends to 'react.component'{
+            state = {
+                counter: 0;
+            };
+            const addOne = this.setState = ++;
+            
+            render() return(
+                <button onClick(addOne)>Click to increase by 1</button>
+            );
+        };
+
+--WHAT ARE CLASS COMPONENTS--- 
+    class component's are "smart" components and are have the ability to use States
+---WHAT THE DIFFERENCE BETWEEN A FUNCTIONAL COMPONENT AND A CLASS COMPONENT---
+    -A class component can use States
+    -A functional component can be seen as the ES6 version and cannot use states, however they can use hooks which is their version of states
+---WHAT ARE THE THREE STAGES OF THE REACT LIFECYCLE---
+    -render( when the component is created)
+    -precommit(when it reads the change)
+    -commit(when the change is made and the component is updated)
+---WHAT ARE THE THREE LIFECYCLE METHOD---
+    -lifecycleWillMount
+    -lifecycleDidMount
+    -lifecycleUnmount
+
+---WHAT IS IT MAINLY USED FOR IN DAY TO DAY PROGRAMMING---
+    -finding a good spot for fetching data? can't really see this being used in an actual project or work setting
+
