@@ -4,14 +4,14 @@ import React from 'react';
 
 const Name = (props) => {
     return (
-        <div><h1>Hello, my name is {props.firstName}{props.lastName}</h1></div>
+        <div><h1>Hello, my name is {props.person.firstName}{props.person.lastName}</h1></div>
         //hello, my name is bob smith
         //hello, my name is jack black
         //hellow my name is jill hill
     )
 }
 
-export default Child;
+export default Name;
 
 
 
@@ -22,13 +22,13 @@ export default Child;
 import React from 'react';
 
 const Flavor = (props) =>{
-    const typeOfFlavor = () => {
-        if('red'){
-            return 'strawberry'
-        }else if('yellow'){
-            return 'mangoe'
-        }else{
-            return 'peach'
+    const typeOfFlavor = (color) => {
+        if(color === 'red'){
+            return 'strawberry';
+        } else if(color === 'yellow'){
+            return 'mango';
+        } else {
+            return 'peach';
         };
     }
 
@@ -41,3 +41,11 @@ const Flavor = (props) =>{
 }
 
 export default Flavor;
+
+// // a, b => parameters
+// const add = (a, b) => {
+//     return a + b;
+// }
+
+// // 1, 1 => arguments
+// add(1, 1);

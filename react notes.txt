@@ -115,17 +115,16 @@
         -data that is sent cannot be changed by the child component
         -EX:below the child component is gaining access to the data from the parent component. specifically the data within the props labeled name. This happened because we calleed the child component and then gave it the props name with the data being {bob}
             PARENT COMPONENT
-                const parent (props) => {
-                    const bob = 'bob';
+                const Parent (props) => {
                     return(
-                    <div>
-                        <child name={bob}/>
-                    </div>
+                        <div>
+                            <Child name='bob' />
+                        </div>
                     )
                 }
                 export default parent;
             CHILD COMPONENT
-            const child () => {
+            const Child (props) => {
                 return(
                     <div>
                         <h1>Hello, my name is {props.name}</h1>
@@ -134,14 +133,16 @@
             };
             export default child;
     -STATES:
-        -used in class components
+        -used in class components (or functional components with hooks)
+        -state is one big object
         -deals with the data within the class component itself rather than fetching data externally from a parent function
-        -used for data that can change within the UI
+        -used for data that can change within the UI (examples: closing a modal, stepper)
         EX: Here we returning a class component where whenever the button gets clicked the counter within the state object increases by 1
 
             class App extends React.Component{
                 state = {
-                    counter: 0;
+                    counter: 0,
+                    text: 'test',
                 };
 
                 addOne = () => this.setState({counter:this.state.counter +1});
@@ -149,26 +150,30 @@
                 render(){
                     return(
                         <button onClick={this.addOne}>Click to increase by 1</button>
+                        <h1>This is the current count:{this.state.counter} </h1> 
                     )
                 }   
             };
 
 --WHAT ARE CLASS COMPONENTS--- 
-    class component's are "smart" components and are have the ability to use States
+    class component's are "smart" components because:
+     - they have the ability to use state
+     - they have the ability to use lifecycle methods
 
 ---WHAT THE DIFFERENCE BETWEEN A FUNCTIONAL COMPONENT AND A CLASS COMPONENT---
-    -A class component can use States
-    -A functional component can be seen as the ES6 version and cannot use states, however they can use hooks which is their version of states
+    -A class component can use state and lifecycle methods
+    -A functional component *BEFORE* couldn't use states or lifecycles, 
+        nowadays with hooks, it can use both.
 
 ---WHAT ARE THE THREE STAGES OF THE REACT LIFECYCLE---
     -render( when the component is created)
     -precommit(when it reads the change)
-
     -commit(when the change is made and the component is updated)
----WHAT ARE THE THREE LIFECYCLE METHOD---
-    -lifecycleWillMount
-    -lifecycleDidMount
-    -lifecycleUnmount
+
+---WHAT ARE THE THREE MOST IMPORTANT LIFECYCLE METHOD---
+    -componentWillMount
+    -componentDidMount
+    -componentWillUnmount
 
 ---WHAT IS IT MAINLY USED FOR IN DAY TO DAY PROGRAMMING---
     -finding a good spot for fetching data? can't really see this being used in an actual project or work setting

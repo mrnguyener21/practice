@@ -4,13 +4,21 @@ import React from 'react';
 import Name from './childComponent';
 
 const Names = () => {
-    const name = {
-        name1: ['bob','smith'],
-        name2: ['jack','black'],
-        name3: ['jill','hill'],
-    }
+    const people = [
+        {
+            firstName: 'bob',
+            lastName: 'smith'
+        },
+        {
+            firstName: 'jill',
+            lastName: 'hill'
+        },
+    ]
+
+    names.map((name) => {});
+
     return(
-        name.map((firstName, lastName) => <Name firstName = {firstName} lastName={lastName}/>)
+        people.map((person) => <Name person={person} />)
         //the reason i think this works is because the parameter in the maps function represents the data within the current loop. So first loop would be first property which is name1. Name1 has an array containing 2 strings. I feel that its safe to say that the first paramete(firstName) defaults to the first index of the array and the second parameter(lastName) defaults to the second index.
     )
 }
@@ -21,13 +29,9 @@ export default Names;
 import React from 'react';
 import Flavor from './childComponent';
 const Flavors = () => {
-    const colors = {
-        color1: 'yellow',
-        color2: 'pink',
-        color3: 'red'
-    }
+    const colors = ['yellow', 'pink', 'red']
     return (
-        colors.map((color) =><Flavors color = {color}/>)
+        colors.map((color) =><Flavor color = {color}/>)
     )
 }
 
