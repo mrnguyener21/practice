@@ -7,22 +7,23 @@ export default App;
 import React from 'react';
 
 class App extends React.Component{
-    state={
-        counter:0,
+    state = {
+        counter: 0,
     }
-    
-    increase= this.setState(this.state.counter +1);
-    decrease = this.setState(this.state.counter -1) 
 
+    increase = () => this.setState({ counter: this.state.counter + 1 }); // take a look later
+    decrease = () => this.setState({ counter: this.state.counter - 1 }); // take a look later
+    
     render(){
         return(
             <>
-                <button onClick={increase}>PRESS TO ADD 1</button>
-                <button onclick={decrease}>PRESS TO SUBTRACT 1</button>
+                <button onClick={this.increase}>PRESS TO ADD 1</button>
+                <button onclick={this.decrease}>PRESS TO SUBTRACT 1</button>
             </>
         )
     }
 }
+//remember with class base components to use this.blach blach blach
 export default App;
 
 // example 2
@@ -35,21 +36,17 @@ import paper from './image/paper.jpg';
 import scissor from './image/scissor.jpg';
 
 class rockPaperScissor extends React.Component{
-    state={
+    state = {
         choice: '',
     }
-
-    rock = this.setState(this.state.choice = <img src={rock} alt='rock'/>);
-    paper = this.setState(this.state.choice = <img src={paper} alt='paper'/>);
-    scissor  = this.setState(this.state.choice = <img src={scissor} alt='scissor'/>); 
 
     render(){
         return(
             <>
-                <h1>{this.state.choice}</h1>
-                <button onClick={rock}>ROCK</button>
-                <button onClick={paper}>PAPER</button>
-                <button onClick={paper}>SCISSOR</button>
+                {this.state.choice ? <img src={this.state.choice} /> : null}
+                <button onClick={() => this.setState({ choice: 'rock' })}>ROCK</button>
+                <button onClick={() => this.setState({ choice: 'paper' })}>PAPER</button>
+                <button onClick={() => this.setState({ choice: 'scissor' })}>SCISSOR</button>
             </>
         )
     }
@@ -71,31 +68,34 @@ class ID extends React.Component{
         image: <img src={unknown} alt='unknown'/>,
         name: 'NAME',
         occupation: 'OCCUPATION',
-
     }
-    doctor= this.setState(
-        this.state.image = <img src={doctor} alt='doctor'/>,
-        this.state.name = 'KEVIN NGUYEN',
-        this.setState.occupation = 'DOCTOR',
-    )
 
-    nurse= this.setState(
+    doctor= ()=> this.setState({ image: 'test', name: 'KEVIN NGUYEN', occupation:'DOCTOR'})
+
+    nurse= ()=> this.setState(
         this.state.image = <img src={nurse} alt='nurse'/>,
         this.state.name = 'HENRY SMITH',
         this.setState.occupation = 'NURSE',
     )
 
-    pharmacist= this.setState(
+    pharmacist=()=>  this.setState(
         this.state.image = <img src={pharmacist} alt='pharmacist'/>,
         this.state.name = 'ANDY LE',
         this.setState.occupation = 'PHARMACIST',
     )
+    
     render(){
         return(
             <>
-                <button onClick ={doctor}>DOCTOR</button>
-                <button onClick ={nurse}>NURSE</button>
-                <button onClick ={pharmacist}>PHARMACIST</button>
+                <button onClick ={this.doctor}>DOCTOR</button>
+                <button onClick ={this.nurse}>NURSE</button>
+                <button onClick ={this.pharmacist}>PHARMACIST</button>
+                <div>
+                    <h1>{this.state.name}</h1>
+                    <h1>{this.state.occupation}</h1>
+                    <img src={this.state.image} />
+                </div>
+
             </>
         )
     }
