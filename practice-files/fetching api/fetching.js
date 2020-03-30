@@ -1,8 +1,9 @@
+//EXAMPLE 1
 import axios from 'axios';
 
 const URL = 'insert database url';
 const response = await.axios.get(URL);
-const fetchpeople = async () => {
+const fetchPeople = async () => {
     try{
         
 
@@ -12,17 +13,25 @@ const fetchpeople = async () => {
                 name: person.name,
                 age: person.age,
                 sex: person.sex 
-                // 'person' is the parameter that we used to pass through our map functions and the dot notation we use is accessing the our data base. Since that's the case we have to make sure that what we type as to match up with how it's wrote in our data. In our example the array containing the data for pictures is labled pic so we have to say person.pic for it to work instead of person.picture which will not work
             }
             return informationAboutPeople;
         });  
         return people;
     }catch(error){
-        //this is where you would add something for the 404 error page if we couldnt fetch the data
     }
 }
-export default fetchpeople;
+export default fetchPeople;
 
+
+
+
+
+
+
+
+
+
+//EXAMPLE 2
 import axios from 'axios';
 
 const URL = 'insert database url';
@@ -46,6 +55,19 @@ const fetchColors = async()=>{
 
 export default fetchColors;
 
+
+
+
+
+
+
+
+
+
+
+
+
+//EXAMPLE 3
 import axios from 'axios';
 
 const URL = 'INSERT DATABASE URL HERE';
@@ -68,7 +90,9 @@ const fetchDogs = async()=> {
         console.log(error)
     }
 }
+export default fetchDogs;
 
+//EXAMPLE 4
 import axios from 'axios';
 
 const URL = 'INSERT DATABASE URL HERE';
@@ -93,7 +117,7 @@ const fetchSodas = async () => {
 export default fetchSodas;
 
 
-
+//EXAMPLE 5
 import axios from 'axios';
 
 const URL = 'INSERT DATABASE URL HERE';
@@ -119,7 +143,7 @@ const fetchAnimes = async () =>{
 export default fetchAnimes;
 
 
-
+//EXAMPLE 6
 import axios from 'axios';
 
 const URL = 'ENTER WEBSITE HERE';
@@ -138,12 +162,14 @@ const fetchLaptops = async ()=> {
             }
             return laptopInformation;
         })
-        return Laptops,
+        return Laptops;
     }catch(error){
         console.log(error);
     }
 }
+export default fetchLaptops;
 
+//EXAMPLE 7
 import axios from 'axios';
 
 const URL = 'ENTER DATABASE URL HERE';
