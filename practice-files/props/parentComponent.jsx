@@ -36,3 +36,18 @@ const Flavors = () => {
 }
 
 export default Flavors;
+
+//EXAMPLE 3
+import React from 'react';
+import Item from './childComponent';
+
+const Items = () => {
+    const items ={
+        something1: 'something',
+        something2: 'the second something',
+    }
+    return(
+        items.map((item)=> <Item firstsomething={item.something1} secondsomething={item.something2}/>)
+    )
+}
+export default Items;

@@ -236,3 +236,30 @@ class Watches extends React.Component{
         }
     }
 export default Watches;
+
+//EXAMPLE 8
+
+import React from 'react';
+import fetchItems from './fetching.js';
+
+class Items extends React.component{
+    state={
+        items:[],
+    }
+
+    async componentDidMount(){
+        const data = await fetchItems();
+        this.setState({items:data});
+    }
+    render(){
+        return(
+            this.state.items.map((item)=> {
+                <div>
+                    <h1>{item.something1}</h1>
+                    <h1>{item.something2}</h1>
+                </div>
+            })
+        )
+    }
+}
+export default Items;

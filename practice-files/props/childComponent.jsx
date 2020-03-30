@@ -49,3 +49,15 @@ export default Flavor;
 
 // // 1, 1 => arguments
 // add(1, 1);
+
+//example 3
+import React from 'react';
+
+const Item = (props) => {
+    return(
+        <div>
+            <h1>Wow, this is {props.firstsomething} new isn't it?</h1>
+        </div>
+    )
+}
+export default Item;

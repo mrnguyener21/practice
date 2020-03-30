@@ -22,15 +22,6 @@ const fetchPeople = async () => {
 }
 export default fetchPeople;
 
-
-
-
-
-
-
-
-
-
 //EXAMPLE 2
 import axios from 'axios';
 
@@ -54,17 +45,6 @@ const fetchColors = async()=>{
 }
 
 export default fetchColors;
-
-
-
-
-
-
-
-
-
-
-
 
 
 //EXAMPLE 3
@@ -130,7 +110,7 @@ const fetchAnimes = async () =>{
             const animeInformation = {
                 title: anime.name,
                 genre: title.genre,
-                releaseDate: title.relateDate,
+                releaseDate: title.releaseDate,
                 numberOfEpisodes: title.episodeCount
             } 
         return animeInformation;
@@ -192,3 +172,26 @@ const fetchWatches = async()=>{
     }
 }
 export default fetchWatches;
+
+//EXAMPLE 8
+import axios from 'axios';
+
+const URL = 'ENTER WEBSITE HERE';
+
+const response = await axios.get(URL);
+
+const fetchItems = async () => {
+    try{
+        const items = response.data.map((item) => {
+            const itemInformation = {
+                something1: item.stuff1,
+                something2: item.stuff2,
+            }
+            return itemInformation;
+        })
+        return items;
+    }catch(error){
+        console.log(error);
+    }
+}
+export default fetchItems;
