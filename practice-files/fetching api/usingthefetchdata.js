@@ -1,21 +1,42 @@
 //EXAMPLE 1
 import React from 'react';
+
 import fetchPeople from './fetching.js';
 
 class People extends React.Component{
-    state={
-        people:[],
+    state = {
+        people: [],
+        counter: 0,
     }
-    async componentDidMount(){
+
+    async componentDidMount() {
         const data = await fetchPeople();
 
-        this.setState({people:data});
-        //why are we able to write this instead of this.setState = ({people:this.state.people:data})?
+        this.setState({ people: data });
+        
+        // setState is an async function.
+        // React may batch a bunch of setStates together.
+        // So the value of this.state.count
+        // is the value at the time you make the request.
+        
+        this.setState({ counter: this.state.counter + 1 });
+        
+        // A better solutions to call a function
+        // that gets evaluated at the time the
+        // setState gets executed.
+        
+        // Object instant return inside of an arrow function ()
+        // const add = (a, b) => ({ a: 'test' });
+
+        this.setState((prevState) => ({
+           counter: prevState.counter +1
+        }));
     };
+
     render(){
         if(this.state.people.length === 0){
             return <h1>LOADING</h1>
-        }else {
+        } else {
             return(
                 this.state.people.map((person)=> {
                 <>
@@ -70,7 +91,7 @@ export default Colors;
 //EXAMPLE 3
 import React from 'react';
 
-import FetchDog from './fetching.js';
+import fetchDogs from './fetching.js';
 
 class Dogs extends React.Component{
     state={
@@ -78,9 +99,15 @@ class Dogs extends React.Component{
     }
 
     async componentDidMount(){
-        const data = await FetchDog();
+        const dogs = await fetchDogs();
 
-        this.setState({dogs:data});
+        // when we have the same key and the value we can omit the latter
+        // const firstName = 'John';
+        // const lastName = 'Doe';
+
+        // const person = { firstName, lastName }
+
+        this.setState({ dogs: dogs });
     }
 
     render(){
@@ -113,8 +140,8 @@ class Sodas extends React.component{
     }
 
     async componentDidMount(){
-        const data = await fetchSoda();
-        this.setState({sodas:data});
+        const soda = await fetchSoda();
+        this.setState({sodas});
     }
 
     render(){

@@ -2,33 +2,60 @@
 import axios from 'axios';
 
 const URL = 'insert database url';
-const response = await.axios.get(URL);
-const fetchPeople = async () => {
-    try{
-        
 
-        const people = response.data.map((person) => {
-            const informationAboutPeople = {
-                picture: person.pic,
-                name: person.name,
-                age: person.age,
-                sex: person.sex 
-            }
-            return informationAboutPeople;
-        });  
+const fetchPeople = async () => {
+    try {
+        const response = await axios.get(URL);
+        
+        // OBJECT DESTRUCTURING 
+
+        // const person = { 
+        //     firstName: 'Victor', 
+        //     lastName: 'Nguyen'
+        //     age: 25,
+        //     pets: [
+        //         { name: 'pet1' }
+        //     ]
+        //     car: {
+        //         make: 'BMW',
+        //         color: 'blue',
+        //         year: 2010,
+        //     }
+        // }
+
+        // const { thingsToDesctructure} = objectToDestructureFrom;
+        
+        // const { firstName, lastName, age, pets, car: { make, color, year } } = person;
+
+        // console.log(firstName, lastName, age);
+        // console.log(pets[0].name);
+        // console.log(make);
+        // console.log(color);
+        // console.log(year);
+
+        const people = response.data.map((person) => ({ 
+            pic: person.pic,
+            name: person.name,
+            age: person.age,
+            sex: person.age 
+        }));
+
         return people;
-    }catch(error){
+    } catch(error){
+        console.log(error);
     }
 }
+
 export default fetchPeople;
 
 //EXAMPLE 2
 import axios from 'axios';
 
 const URL = 'insert database url';
-const response = await.axios.get(URL);
 const fetchColors = async()=>{
-    try{
+    try{      
+        const response = await axios.get(URL);
+
         const colors = response.data.map((color) =>{
             const colorCategory ={
                 warm: color.warm,
@@ -52,10 +79,11 @@ import axios from 'axios';
 
 const URL = 'INSERT DATABASE URL HERE';
 
-const response = await.axios.get(URL);
 
 const fetchDogs = async()=> {
     try{
+        const response = await axios.get(URL);
+        
         const dogs = response.data.slice(0,5).map((dog)=>{
             const dog = {
                 breed: dog.breed,
@@ -77,11 +105,11 @@ import axios from 'axios';
 
 const URL = 'INSERT DATABASE URL HERE';
 
-const response = await axios.get(URL);
-
 const fetchSodas = async () => {
     try{
-        const Sodas = response.data.map((soda)=>{
+        const response = await axios.get(URL);
+        
+        const sodas = response.data.map((soda)=>{
             const sodaInformation = {
                 brand: soda.brand,
                 regularOrDiet: soda.regularOrDiet,
@@ -89,7 +117,7 @@ const fetchSodas = async () => {
             } 
             return sodaInformation;
         })
-        return Sodas;
+        return sodas;
     } catch(error){
         console.log(error);
     }
@@ -102,10 +130,10 @@ import axios from 'axios';
 
 const URL = 'INSERT DATABASE URL HERE';
 
-const response = await axios.get(URL);
-
 const fetchAnimes = async () =>{
     try{
+        const response = await axios.get(URL);
+        
         const animes = response.data.map((anime)=>{
             const animeInformation = {
                 title: anime.name,
