@@ -93,3 +93,15 @@ const fetchDogs = async ()=>{
 }
 export default fetchDogs;
 
+const arrayWithObjects = [
+    {a:1,b:2,c:3},
+    {a:3,b:4,c:5},
+]
+const objects = arrayWithObjects.map((object)=>{
+   const{a,b,c} = object;
+  console.log(a,b,c)
+})
+console.log(objects)//returns the numbers below it
+//1,2,3
+//4,5,6
+//why does it return two separate objects with all of the variables displayed but in example 5 if i do return(a,b,c) it returns an array and only an array containing the data for c 
