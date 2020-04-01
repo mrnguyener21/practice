@@ -43,3 +43,5 @@ const objects = arrayWithObjects.map((object)=>{
    return (object);
 })
 console.log(objects) //[{1,2,3},{4,5,6}], this is the case, because you are ignoring the assigning to const a, b & c and returning the actually object parameter from each iteration
+
+
