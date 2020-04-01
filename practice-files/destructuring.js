@@ -69,8 +69,27 @@ const fetchColors = async () => {
         })
         return colors;
     }catch(error){
-        console.log('NO DOGGIES FOUND')
+        console.log('NO COLORS FOUND')
     }
 }
 export default fetchColors;
+
+// example 8 USING EXAMPLE 3 FROM fetch.JS
+import axios from 'axios';
+
+const URL='insert database URL here';
+
+const fetchDogs = async ()=>{
+    try {
+        const response = await axios.get(URL);
+        const dogs = response.data.slice(0,5).map((dog)=>{
+            const{breed,age,sex,color}=dog;
+            return({breed, age, sex, color});//return an array with 5 objects, each containing properties from the database where the property names' match. So if the property breed matches to a property name breed in the database, it will pull it for the first 5 objects
+        })
+        return dogs;
+    }catch(error){
+        console.log('NO DOGGIES FOUND')
+    }
+}
+export default fetchDogs;
 
