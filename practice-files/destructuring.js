@@ -31,7 +31,7 @@ const objects = arrayWithObjects.map((object)=>{
    const{a,b,c} = object;
    return (a);
 })
-console.log(objects)
+console.log(objects)//[1,3]
 
 //example 5
 const arrayWithObjects = [
@@ -119,3 +119,27 @@ console.log(b,c,a)//2,3,1
 //example 12
 const [a,b,c]='this is cool'.split(' '/*theres a space inside the string*/);
 console.log(a,b,c)//this, is, cool
+
+//example 13
+const arrayWithObjects = [
+    {a:1,b:2,c:3},
+    {a:3,b:4,c:5},
+]
+const objects = arrayWithObjects.map((object)=>{
+   const{a,b,c} = object;
+   console.log(a,b,c)
+   return a+b
+})
+console.log(objects)//[3,7]
+
+//example 14
+const arrayWithObjects = [
+    {a:1,b:2,c:3},
+    {a:3,b:4,c:5},
+]
+const objects = arrayWithObjects.map((object)=>{
+   const{a,b,c} = object;
+   console.log(a+b)/*below is what gets console logged*/
+    //3
+    //7
+})
