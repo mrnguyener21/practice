@@ -73,6 +73,7 @@ const fetchColors = async()=>{
 
 export default fetchColors;
 
+//EXAMPLE 2 USING DESTRUCTIRNG AND JAVASCRIPT IMPLEMENTATION OF SAME NAME
 
 //EXAMPLE 3
 import axios from 'axios';
