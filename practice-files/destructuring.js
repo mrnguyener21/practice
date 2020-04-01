@@ -111,3 +111,11 @@ console.log(objects)//returns the numbers below it
 const names = ['victor','adrian','betty','tom']
 const [a,b,c,d]=names;
 console.log(d,c,b,a)// tom, betty, adrian, victor
+
+//example 11
+const [a,b,c]='123';
+console.log(b,c,a)//2,3,1
+
+//example 12
+const [a,b,c]='this is cool'.split(' '/*theres a space inside the string*/);
+console.log(a,b,c)//this, is, cool
